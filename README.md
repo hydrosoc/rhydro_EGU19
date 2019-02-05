@@ -3,6 +3,7 @@
 / [Slides](#Slides) 
 / [Check](#Checks) 
 / [Resources](#Resources) 
+/ [R at EGU2019](#r-at-egu2019)
 <!--- / [Citation](#Citation)  --->
 
 # Using R in Hydrology - EGU2019 Short Course
@@ -37,6 +38,16 @@ We will provide any relevant information you require to follow along during the 
 - <a href="http://abouthydrology.blogspot.co.uk/2012/08/r-resources-for-hydrologists.html" rel="nofollow">R-Resources for Hydrology</a> - a detailed list of R resources for hydrology (slightly outdated now)
 - <a href="https://journal.r-project.org/archive/2016/RJ-2016-036/RJ-2016-036.pdf" rel="nofollow">rnrfa</a> - an R package to interact with the UK National River Flow Archive ([GitHub repo](https://github.com/cvitolo/rnrfa))
 - <a href="https://ropensci.github.io/hddtools/" rel="nofollow">hddtools</a> - an R package to facilitate access to a variety of online open data sources for hydrologists
+
+## R at EGU2019
+
+There are a number of other short courses using R that may be of interest to you:
+
+- [Building Bayesian Spatial Models to predict landslides by using R-INLA (co-organized) ](https://meetingorganizer.copernicus.org/EGU2019/session/30928)
+- [End-member modelling analysis of grain-size data in R (co-organized) ](https://meetingorganizer.copernicus.org/EGU2019/session/30964)
+- [Geocomputation with R (co-organized) ](https://meetingorganizer.copernicus.org/EGU2019/session/31033)
+- [Writing and maintaining R packages (co-organized) ](https://meetingorganizer.copernicus.org/EGU2019/session/31034)
+
 
 
 <!--- ## Citation
