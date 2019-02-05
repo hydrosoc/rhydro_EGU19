@@ -22,7 +22,7 @@ Mon,
 The detailed and time-tabled list of contributions, tutorials and discussion points will be here as soon it's ready.
 
 ## Slides
-All materials will be uploaded to this repository well before the course begins. To get everything (slides, data, code, etc.) onto your local machine, we recommend to [download the whole github course repository](https://codeload.github.com/hydrosoc/rhydro_EGU19/zip/master). Individual presentations (*.html* or PDF files) can be downloaded from the [presentations folder](./presentations) and viewed in a regular web browser.
+All materials will be uploaded to this repository well before the course begins. To get everything (slides, data, code, etc.) onto your local machine, we recommend to [download the whole github course repository](https://codeload.github.com/hydrosoc/rhydro_EGU19/zip/master). Individual presentations (*.html* or PDF files) can be downloaded from the [presentations folder](./presentations) and viewed in a regular web browser (once they have been made available).
 
 ## Checks
 We will provide any relevant information you require to follow along during the course in due time. This includes software (versions) and any other materials. Stay tuned!
