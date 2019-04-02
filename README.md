@@ -22,10 +22,11 @@ Conveners: Alexander Hurley, Louise Slater, Lucy Barker, Guillaume Thirel, Claud
 The detailed and time-tabled list of contributions, tutorials and discussion points will be here as soon it's ready.
 
 ## Slides
-All materials will be uploaded to this repository well before the course begins. To get everything (slides, data, code, etc.) onto your local machine, we recommend to [download the whole github course repository](https://codeload.github.com/hydrosoc/rhydro_EGU19/zip/master). Individual presentations (*.html* or PDF files) can be downloaded from the [presentations folder](./presentations) and viewed in a regular web browser (once they have been made available).
+All materials will be uploaded to this repository before the course begins. To get everything (slides, data, code, etc.) onto your local machine, we recommend to [download the whole github course repository](https://codeload.github.com/hydrosoc/rhydro_EGU19/zip/master). Individual presentations (*.html* or PDF files) can be downloaded from the [presentations folder](./presentations) and viewed in a regular web browser (once they have been made available).
 
 ## Checks
-We will provide any relevant information you require to follow along during the course in due time. This includes software (versions) and any other materials. Stay tuned!
+We will provide any relevant information you require to follow along during the course in due time. This includes software (versions) and any other materials. Stay tuned!  
+**Update**: We've chosen a presentation-style delivery of the course, rather than a hands-on workshop. You are more than welcome to follow along in the raw  (if provided) or rendered versions of any materials. However, some operations, such as downloading and handling rasters, take multiple minutes. If you do want to execute code provided in the raw documents, we advise to give it a try in advance of the course, and ask questions where/if necessary during the session. Required packages are highlighted where necessary.
 <!--- - To follow along, participants may wish to run the following code before the session: 
   install.packages(c("rnrfa", "lfstat", "osmdata", "tidyverse", "sf", "leaflet", "ncdf4","lubridate", "ggplot2", "raster", "rgdal", "airGRteaching", "airGR"))
 - For the netCDF presentation, sample gridded data for 2015-06 can be downloaded directly by clicking <a href="https://catalogue.ceh.ac.uk/datastore/eidchub/b745e7b1-626c-4ccc-ac27-56582e77b900/chess_precip_201506.nc" rel="nofollow">here</a> and the catchment shapefile can be downloaded from <a href="http://nrfa.ceh.ac.uk/data/station/spatial_download/12001" rel="nofollow">here</a> (see acknowledgments in presentation).                
@@ -40,6 +41,8 @@ We will provide any relevant information you require to follow along during the 
 - <a href="https://ropensci.github.io/hddtools/" rel="nofollow">hddtools</a> - an R package to facilitate access to a variety of online open data sources for hydrologists
 
 ## R at EGU2019
+
+We recommend the PICO presentation [Using R in Hydrology: recent developments and future directions](https://meetingorganizer.copernicus.org/EGU2019/EGU2019-2823-2.pdf) delivered by Louise Slater in the session [Innovative methods to facilitate open science and data analysis in hydrology - from data collection in challenging environments to data sharing, visualization and modelling](https://meetingorganizer.copernicus.org/EGU2019/picos/31717). This presentation is based on our [discussion paper in HESS](https://www.hydrol-earth-syst-sci-discuss.net/hess-2019-50/) with the same title.
 
 There are a number of other short courses using R that may be of interest to you:
 
