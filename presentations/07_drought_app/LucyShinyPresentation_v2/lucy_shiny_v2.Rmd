@@ -1,0 +1,194 @@
+---
+title: "rHydro 2019 Presentation Theme"
+subtitle: "⚔<br/>with xaringan"
+author: "Alexander Hurley"
+date: "2019/03/03 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    css: ["static/css/rhydro.css", "static/css/head-foot.css" ]
+
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+# color used in xaringanthemer
+egu_blue <- rgb(red = 0, green = 112, blue = 192,maxColorValue = 255)
+egu_yellow <- rgb(red = 255, green = 221, blue = 0,maxColorValue = 255)
+
+# color used for font awesome icons
+fa_color <- "lightgrey"
+
+# SET XARINGTHEMER CHUNK TO EVAL = TRUE TO CHANGE THEME!
+# xaringanthemer saves the resulting css theme in the main document directory.
+# drop the 'statics/css/'  from the file path to use the new css file
+
+
+# intsall missing packages
+list.of.packages <- c("xaringan", "xaringanthemer", "emo", "fontawesome")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages, repos="http://cran.us.r-project.org")
+
+```
+
+```{r xaringan-themer, include = FALSE, eval = FALSE}
+library(xaringanthemer)
+
+# duo_accent(primary_color = rgb(red = 0, green = 112, blue = 192,maxColorValue = 255), 
+# secondary_color = rgb(red = 255, green = 221, blue = 0,maxColorValue = 255))
+
+
+
+duo_accent(primary_color =  darken_color(egu_blue, strength = 0.3),
+           secondary_color = egu_yellow,
+           inverse_background_color = egu_yellow,
+           inverse_text_color =  egu_blue,
+           title_slide_text_color = egu_yellow,
+           link_color = "darkorange",
+           black_color = "gray20",
+           table_row_even_background_color = lighten_color(color_hex = egu_blue, 
+                                                           strength = 0.8),
+           
+           extra_css = list(
+               ".title-logo-box" = list(
+                   "height" = "1750px",
+                   "width" = "175px",
+                   "position" = "absolute",
+                   "top" = "55%",
+                   "left" = "70%"
+               )),
+           outfile = "rhydro.css" 
+           
+)
+
+
+
+```
+
+class: title-slide, left, middle
+
+<h1> Using R Shiny to visualise and share your data <br> 
+A UK drought story </h1>
+
+<br>
+
+
+<h3> Lucy Barker <br> <em>Centre for Ecology & Hydrology, Wallingford, UK</em> </h3>
+<br>
+<br>
+.small[`r fontawesome::fa("home", fill = fa_color)` [www.ceh.ac.uk/staff/lucy-barker](https://www.ceh.ac.uk/staff/lucy-barker)  
+`r fontawesome::fa("twitter", fill = fa_color)` [@lucybarkerjane](https://twitter.com/lucybarkerjane)]
+
+.title-logo-box[![](./static/img/rhydro_logo_alt.png)]
+
+---
+# What is Shiny?
+
+"Shiny is an R package that makes it easy to build interactive web apps straight from R. You can host standalone apps on a webpage or embed them in R Markdown documents or build dashboards. You can also extend your Shiny apps with CSS themes, htmlwidgets, and JavaScript actions."
+
+https://shiny.rstudio.com/
+
+---
+# Getting started!
+Install the **shiny** package from CRAN:
+
+```{r eval=FALSE, tidy=FALSE}
+install.packages("shiny")
+```
+
+Check out [https://shiny.rstudio.com/](https://shiny.rstudio.com/) for tutorials, a gallery and cheatsheet.
+
+<iframe src="https://shiny.rstudio.com/images/shiny-cheatsheet.pdf" width="800" height="300" scrolling="no"></iframe> 
+---
+
+# Why did I need Shiny?
+
+I was analysing 125 years of reconstructed flow data and extracted hydrological droughts using:
+
+- 303 catchments
+- 24 accumulation periods
+- 3 event extraction thresholds
+- at least 4 plot types per combination
+
+**87264** individual plots (not accounting for multi-panel plots)
+
+<img src="./img/paper.jpg" alt="Too many plots" height="300">
+
+---
+
+# Why did I choose Shiny?
+
+Initially it meant I could:
+- easily use dynamic plotting (like dygraphs)
+- view data and all plot types for each catchment at the same time
+- easily change the catchment, accumulation period or event extraction threshold
+
+Now it means:
+- People can explore hydrological drought data for 303 catchments across the UK over the last 125 years
+- You can explore the published dataset before downloading it from the Environmental Data Information Centre (EIDC):
+
+Barker, L.J. et al. (2018). [Historic Standardised Streamflow Index (SSI) using Tweedie distribution with standard period 1961-2010 for 303 UK catchments (1891-2015)](https://catalogue.ceh.ac.uk/documents/58ef13a9-539f-46e5-88ad-c89274191ff9). NERC Environmental Information Data Centre. https://doi.org/10.5285/58ef13a9-539f-46e5-88ad-c89274191ff9
+
+---
+# UK Hydrological Drought Explorer
+[UK Hydrological Drought Explorer](https://shiny-apps.ceh.ac.uk/hydro_drought_explorer/)
+
+<iframe src="https://shiny-apps.ceh.ac.uk/hydro_drought_explorer/" width="800" height="400" scrolling="yes"></iframe> 
+---
+# UK Hydrological Drought Explorer
+
+<image src="./img/Shiny_1.png" width="800" height="600"> 
+---
+# UK Hydrological Drought Explorer
+
+<image src="./img/Shiny_2.png" width="800" height="600"> 
+---
+# UK Hydrological Drought Explorer
+
+<image src="./img/Shiny_3.png" width="800" height="600"> 
+---
+# UK Hydrological Drought Explorer
+
+<image src="./img/Shiny_4.png" width="800" height="600"> 
+---
+# UK Hydrological Drought Explorer
+
+<image src="./img/Shiny_5.png" width="800" height="600"> 
+---
+# UK Reconstructed Flow Data Explorer
+[UK Reconstructed Flow Data Explorer](https://shiny-apps.ceh.ac.uk/reconstruction_explorer/)
+
+A companion Shiny app which shows the reconstructed flow data and the model evaluation metrics for the 303 catchments
+ 
+ <iframe src="https://shiny-apps.ceh.ac.uk/reconstruction_explorer/" width="800" height="400" scrolling="yes"></iframe> 
+ 
+ `r fontawesome::fa("twitter", fill = fa_color)` [@katieasmith26](https://twitter.com/katieasmith26)
+---
+# UK Reconstructed Flow Data Explorer
+
+<image src="./img/KatieShiny_1.png" width="800"> 
+---
+# UK Reconstructed Flow Data Explorer
+
+<image src="./img/KatieShiny_2.png" width="800"> 
+---
+# Shiny demonstration
+<image src="./img/star.png" width="400">
+
+<div style="font-size: 8px">Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+---
+# Data
+From the UK National River Flow Archive: [www.nrfa.ceh.ac.uk/data/search](www.nrfa.ceh.ac.uk/data/search)
+
+Downloaded data for Thames at Kingston, Lambourn at Shaw & Coln at Bibury (all SE England):
+- Gauged Daily Flows
+- Catchment Daily Rainfall
+- Shapefile
+
+<image src="./img/NRFA.png" width="600"> 

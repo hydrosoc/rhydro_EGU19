@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>rHydro 2019: Intro and getting to grips with R in Hydroogy</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Alexander Hurley, Ilaria Prosdocimi" />
+    <link rel="stylesheet" href="static\css\rhydro.css" type="text/css" />
+    <link rel="stylesheet" href="static\css\head-foot.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+class: title-slide, left, middle
+
+&lt;h1&gt; Introduction &lt;br&gt; and &lt;br&gt; 
+Getting to grips with R in hydrology &lt;/h1&gt;
+
+&lt;br&gt;
+
+
+&lt;h4&gt; Alexander Hurley &lt;/h4&gt;
+.small[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:lightgrey;" viewBox="0 0 576 512"&gt;&lt;path d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z"/&gt;&lt;/svg&gt; [aglhurley.rbind.io](https://aglhurley.rbind.io)  
+&lt;svg style="height:0.8em;top:.04em;position:relative;fill:lightgrey;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; [aglhurley](https://twitter.com/aglhurley)]
+
+&lt;!-- &lt;h4&gt; Claudia Vitolo &lt;/h4&gt; --&gt;
+&lt;!-- .small[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:lightgrey;" viewBox="0 0 576 512"&gt;&lt;path d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z"/&gt;&lt;/svg&gt; [aquaresearcher.wordpress.com](https://aquaresearcher.wordpress.com)   --&gt;
+&lt;!-- &lt;svg style="height:0.8em;top:.04em;position:relative;fill:lightgrey;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; [clavitolo](https://twitter.com/clavitolo)] --&gt;
+
+&lt;h4&gt; Ilaria Prosdocimi &lt;/h4&gt;
+.small[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:lightgrey;" viewBox="0 0 576 512"&gt;&lt;path d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z"/&gt;&lt;/svg&gt; [https://github.com/ilapros](https://github.com/ilapros)  
+&lt;svg style="height:0.8em;top:.04em;position:relative;fill:lightgrey;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; [ilapros](https://twitter.com/ilapros)]
+
+.title-logo-box[![](./static/img/rhydro_logo_alt.png)]
+
+---
+class: inverse, center, middle
+
+##  Intro to:  
+# Using R in Hydrology Short Course
+## (SC1.44 / HS12.5)
+
+---
+
+# Session Organization
+
+--
+
+*No need to follow on your computer - just listen.* &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#FFDD00;" viewBox="0 0 512 512"&gt;&lt;path d="M256 32C114.52 32 0 146.496 0 288v48a32 32 0 0 0 17.689 28.622l14.383 7.191C34.083 431.903 83.421 480 144 480h24c13.255 0 24-10.745 24-24V280c0-13.255-10.745-24-24-24h-24c-31.342 0-59.671 12.879-80 33.627V288c0-105.869 86.131-192 192-192s192 86.131 192 192v1.627C427.671 268.879 399.342 256 368 256h-24c-13.255 0-24 10.745-24 24v176c0 13.255 10.745 24 24 24h24c60.579 0 109.917-48.098 111.928-108.187l14.382-7.191A32 32 0 0 0 512 336v-48c0-141.479-114.496-256-256-256z"/&gt;&lt;/svg&gt;
+
+&lt;br&gt;
+
+
+All materials (and additional info) available on: 
+
+
+[GitHub: github.com/hydrosoc/rhydro_EGU19/](https://github.com/hydrosoc/rhydro_EGU19/)
+
+&lt;br&gt;
+
+--
+
+
+Feel free to take pictures! &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#FFDD00;" viewBox="0 0 512 512"&gt;&lt;path d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"/&gt;&lt;/svg&gt;
+
+---
+
+# Session Organization
+
+
+
+- **16:15-16:20**:  &lt;font size="-0.5"&gt; Welcome and introduction &lt;/font&gt;
+- **16:20-16:25**:  &lt;font size="-0.5"&gt; Getting to grips with R in hydrology &lt;/font&gt;
+
+
+- **16:25-16:40**:  &lt;font size="-0.5"&gt; Obtaining, cleaning and visualizing hydrological data &lt;/font&gt;
+- **16:40-16:55**:  &lt;font size="-0.5"&gt; Parallel and HPC computing for hydrologists &lt;/font&gt;
+
+
+- **16:55-17:00**:  &lt;font size="-0.5"&gt; Question time (#1) &lt;/font&gt;
+
+
+- **17:00-17:15**:  &lt;font size="-0.5"&gt; Staying up-to date: automating tasks from downloading data to reporting &lt;/font&gt;
+- **17:15-17:30**:  &lt;font size="-0.5"&gt; Developing apps for data exploration &amp; analyses - a UK drought story &lt;/font&gt;
+- **17:30-17:45**:  &lt;font size="-0.5"&gt; Modelling the hydrological cycle in snow-dominated catchments &lt;/font&gt;
+
+
+- **17:45-17:50**:  &lt;font size="-0.5"&gt; Question time (#2) &lt;/font&gt;
+
+
+- **17:50-18:00**:  &lt;font size="-0.5"&gt; Closing remarks (community initiatives, future of R / new developments) &lt;/font&gt;
+
+---
+
+
+# Session Organization
+
+- **16:15-16:20**:  &lt;font size="-0.5"&gt; Welcome and introduction &lt;/font&gt;
+- **16:20-16:25**:  &lt;font size="-0.5", color = "blue"&gt; Getting to grips with R in hydrology &lt;/font&gt;
+
+
+- **16:25-16:40**:  &lt;font size="-0.5", color = "blue"&gt; Obtaining, cleaning and visualizing hydrological data &lt;/font&gt;
+- **16:40-16:55**:  &lt;font size="-0.5", color = "blue"&gt; Parallel and HPC computing for hydrologists &lt;/font&gt;
+
+
+- **16:55-17:00**:  &lt;font size="-0.5"&gt; Question time (#1) &lt;/font&gt;
+
+
+- **17:00-17:15**:  &lt;font size="-0.5", color = "blue"&gt; Staying up-to date: automating tasks from downloading data to reporting &lt;/font&gt;
+- **17:15-17:30**:  &lt;font size="-0.5"&gt; Developing apps for data exploration &amp; analyses - a UK drought story &lt;/font&gt;
+- **17:30-17:45**:  &lt;font size="-0.5"&gt; Modelling the hydrological cycle in snow-dominated catchments &lt;/font&gt;
+
+
+- **17:45-17:50**:  &lt;font size="-0.5"&gt; Question time (#2) &lt;/font&gt;
+
+
+- **17:50-18:00**:  &lt;font size="-0.5"&gt; Closing remarks (community initiatives, future of R / new developments) &lt;/font&gt;
+
+&lt;br&gt;
+**General application of R and work flows for hydrology**
+
+---
+
+# Session Organization
+
+- **16:15-16:20**:  &lt;font size="-0.5"&gt; Welcome and introduction &lt;/font&gt;
+- **16:20-16:25**:  &lt;font size="-0.5"&gt; Getting to grips with R in hydrology &lt;/font&gt;
+
+
+- **16:25-16:40**:  &lt;font size="-0.5"&gt; Obtaining, cleaning and visualizing hydrological data &lt;/font&gt;
+- **16:40-16:55**:  &lt;font size="-0.5"&gt; Parallel and HPC computing for hydrologists &lt;/font&gt;
+
+
+- **16:55-17:00**:  &lt;font size="-0.5"&gt; Question time (#1) &lt;/font&gt;
+
+
+- **17:00-17:15**:  &lt;font size="-0.5"&gt; Staying up-to date: automating tasks from downloading data to reporting &lt;/font&gt;
+- **17:15-17:30**:  &lt;font size="-0.5", color = "blue"&gt; Developing apps for data exploration &amp; analyses - a UK drought story &lt;/font&gt;
+- **17:30-17:45**:  &lt;font size="-0.5", color = "blue"&gt; Modelling the hydrological cycle in snow-dominated catchments &lt;/font&gt;
+
+
+- **17:45-17:50**:  &lt;font size="-0.5"&gt; Question time (#2) &lt;/font&gt;
+
+
+- **17:50-18:00**:  &lt;font size="-0.5"&gt; Closing remarks (community initiatives, future of R / new developments) &lt;/font&gt;
+
+&lt;br&gt;
+**Domain-specific use-cases**
+
+---
+
+# Session Organization
+
+
+- **16:15-16:20**:  &lt;font size="-0.5"&gt; Welcome and introduction &lt;/font&gt;
+- **16:20-16:25**:  &lt;font size="-0.5"&gt; Getting to grips with R in hydrology &lt;/font&gt;
+
+
+- **16:25-16:40**:  &lt;font size="-0.5"&gt; Obtaining, cleaning and visualizing hydrological data &lt;/font&gt;
+- **16:40-16:55**:  &lt;font size="-0.5"&gt; Parallel and HPC computing for hydrologists &lt;/font&gt;
+
+
+- **16:55-17:00**:  &lt;font size="-0.5", color = "red"&gt; Question time (#1) &lt;/font&gt;
+
+
+- **17:00-17:15**:  &lt;font size="-0.5"&gt; Staying up-to date: automating tasks from downloading data to reporting &lt;/font&gt;
+- **17:15-17:30**:  &lt;font size="-0.5"&gt; Developing apps for data exploration &amp; analyses - a UK drought story &lt;/font&gt;
+- **17:30-17:45**:  &lt;font size="-0.5"&gt; Modelling the hydrological cycle in snow-dominated catchments &lt;/font&gt;
+
+
+- **17:45-17:50**:  &lt;font size="-0.5", color = "red"&gt; Question time (#2) &lt;/font&gt;
+
+
+- **17:50-18:00**:  &lt;font size="-0.5"&gt; Closing remarks (community initiatives, future of R / new developments) &lt;/font&gt;
+
+---
+class: center, middle
+
+
+### Questions?
+### **Go to:** [www.sli.do](www.sli.do) and
+## enter event code **#rhydro2019**
+
+
+---
+class: inverse, center, middle
+
+#  Getting to grips with R in hydrology
+
+
+---
+
+# Using R - some resources 
+
+&lt;!-- R is a language for statistical computing - now evolved to a more complex programming language.  --&gt;
+R is ubiquitous in science and many other fields: lots of material/blogposts introducing R for all sorts of applications and data. 
+
+
+Some popular material (see also the suggestions at [RStudio](https://www.rstudio.com/online-learning/)):   
+
+* [Software carpentry:](http://swcarpentry.github.io/r-novice-inflammation/) a set of introductory lessons - see also the other carpentry lessons/workshops near you 
+
+* [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html) by the R Development Core Team
+
+* [R for data science](https://r4ds.had.co.nz/) by Garrett Grolemund and Hadley Wickham
+
+* [Stat 454:](http://stat545.com/topics.html) UBC course on Data wrangling, exploration, and analysis with R
+
+* Packages vignettes
+
+* Meet-ups, R User Groups, R-Ladies... 
+
+* [R-bloggers](https://www.r-bloggers.com/), [Stackoverflow](https://stackoverflow.com/questions/tagged/r), Twitter (#rstats), [RWeekly](https://rweekly.org/)...
+
+---
+
+# Using R for hydrolgy - some resources
+
+* [CRAN Hydrology Taskview:](https://cran.r-project.org/web/views/Hydrology.html) a curated list of packages useful for all water-related investigations (and links to the Spatial/Environmetrics TV)
+
+* [USGS-R:](https://owi.usgs.gov/R) a community of support for users of R
+
+* [Riccardo Rigon's blogpost:](https://abouthydrology.blogspot.com/2012/08/r-resources-for-hydrologists.html) a list of tools useful to hydrologists
+
+* Past [EGU courses](https://github.com/hydrosoc) and Facebook Group (Hydrology in R)
+
+* HESS [Discussion paper](https://www.hydrol-earth-syst-sci-discuss.net/hess-2019-50/hess-2019-50.pdf)
+
+* [R-bloggers](https://www.r-bloggers.com/), [Stackoverflow](https://stackoverflow.com/questions/tagged/r), Twitter (#rstats)... 
+
+
+
+
+---
+
+# Origin of the Hydrology Taskview 
+
+&lt;img src="./img/Tw1SamZip.png" width="700" /&gt;
+
+---
+
+# Origin of the Hydrology Taskview 
+
+&lt;img src="./img/Tw2Ilapros.png" width="843" /&gt;
+
+---
+
+# Origin of the Hydrology Taskview 
+
+
+&lt;img src="./img/Tw3SamAlb.png" width="856" /&gt;
+
+
+---
+
+# From Talk to Action
+
+&lt;img src="./img/HydTVGitHub.png" width="1359" /&gt;
+
+---
+
+# From Talk to Action
+
+&lt;img src="./img/HydTVComb.png" width="2144" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

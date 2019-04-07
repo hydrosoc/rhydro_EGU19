@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>rHydro 2019 Presentation Theme</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Alexander Hurley" />
+    <link rel="stylesheet" href="static\css\rhydro.css" type="text/css" />
+    <link rel="stylesheet" href="static\css\head-foot.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+class: title-slide, left, middle
+
+&lt;h1&gt; Introduction to parallel and high performance computing for hydrologists 
+&lt;svg style="height:0.8em;top:.04em;position:relative;fill:lightgrey;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt; &lt;/h1&gt;
+&lt;br&gt;
+
+&lt;h3&gt;Louise Slater&lt;br&gt; &lt;em&gt;University of Oxford&lt;/em&gt; &lt;/h3&gt;
+&lt;br&gt;
+.small[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:lightgrey;" viewBox="0 0 576 512"&gt;&lt;path d="M488 312.7V456c0 13.3-10.7 24-24 24H348c-6.6 0-12-5.4-12-12V356c0-6.6-5.4-12-12-12h-72c-6.6 0-12 5.4-12 12v112c0 6.6-5.4 12-12 12H112c-13.3 0-24-10.7-24-24V312.7c0-3.6 1.6-7 4.4-9.3l188-154.8c4.4-3.6 10.8-3.6 15.3 0l188 154.8c2.7 2.3 4.3 5.7 4.3 9.3zm83.6-60.9L488 182.9V44.4c0-6.6-5.4-12-12-12h-56c-6.6 0-12 5.4-12 12V117l-89.5-73.7c-17.7-14.6-43.3-14.6-61 0L4.4 251.8c-5.1 4.2-5.8 11.8-1.6 16.9l25.5 31c4.2 5.1 11.8 5.8 16.9 1.6l235.2-193.7c4.4-3.6 10.8-3.6 15.3 0l235.2 193.7c5.1 4.2 12.7 3.5 16.9-1.6l25.5-31c4.2-5.2 3.4-12.7-1.7-16.9z"/&gt;&lt;/svg&gt; [louisejslater.com](https://louisejslater.com)  
+&lt;svg style="height:0.8em;top:.04em;position:relative;fill:lightgrey;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt; [DrLouiseSlater](https://twitter.com/DrLouiseSlater)]
+
+.title-logo-box[![](./static/img/rhydro_logo_alt.png)]
+
+
+
+
+---
+class: inverse
+
+# Outline:
+
+### Key concepts 
+1. Terminology
+2. Why use parallel computing? (and when?)
+3. Defining parallelism
+
+--
+
+### Key approaches
+1. For loops
+2. From for loops to lapply
+3. Parallelising the code (parallel / future.apply / foreach)
+
+--
+
+### References and resources
+1. The CRAN Task View
+2. Cloud computing
+3. References 
+
+---
+class: inverse
+
+# Outline:
+
+### **Key concepts** 
+1. **Terminology**
+2. **Why use parallel computing? (and when?)**
+3. **Defining parallelism**
+
+### Key approaches
+1. For loops
+2. From for loops to lapply
+3. Parallelising the code (parallel / future.apply / foreach)
+
+### References and resources
+1. The CRAN Task View
+2. Cloud computing
+3. References 
+
+---
+
+# Terminology
+
+What are we talking about? 
+
+### High performance computing:
+
+* Using [supercomputers](https://en.wikipedia.org/wiki/Supercomputer) or [parallel computing](https://en.wikipedia.org/wiki/Parallel_computing) techniques to solve computational problems. 
+
+--
+
+### Parallel processing/computing:
+
+* An algorithm is written to divide a large problem into smaller chunks (calculations or processes) that can be solved at the same time 
+
+We will adopt a loose definition of HPC and PC as ["anything related to pushing R a little further"](https://cran.r-project.org/web/views/HighPerformanceComputing.html)
+
+
+
+---
+# Terminology 
+
+- A [core](https://stackoverflow.com/questions/19225859/difference-between-core-and-processor) (processor): basic unit of the Central Processing Unit (CPU): single running version of a program. 
+
+- A [node](https://en.wikipedia.org/wiki/Node_(computer_science): a physical device (e.g. computer) within a network. Can have multiple cores.
+
+- A [cluster](https://en.wikipedia.org/wiki/Computer_cluster) or supercomputer: hosts multiple nodes 
+
+
+&lt;img src="./static/img/nodesNetwork.gif" width="100%" style="display: block; margin: auto;" /&gt;
+Parallel computing aims to increase performance typically by taking advantage of multiple cores, sometimes across multiple nodes. 
+
+---
+
+# Why would we use parallel computing?
+
+.pull-left[  
+Growing data in hydrology:
+- Greater number and size of datasets 
+- Enhanced resolution and abilities of models 
+
+_More/better data takes longer to run. So either we spend longer running our codes, or we find ways to speed up their performance_
+
+Parallel computing is a practical way to **speed things up**.
+
+]
+
+.pull-left[  
+
+&lt;img src="./static/img/af2001.gif" width="90%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# When should we use parallel computing? 
+
+.pull-left[  
+
+It's important to note that:
+
+* It's not always necessary or desirable to parallelise
+
+* Efficiency does not increase linearly with the number of cores used
+
+That said, in hydrology, parallel computing can save a lot of time. 
+
+You **don't need a cluster or HPC** to run parallel code: most laptops have multiple cores...
+
+The examples described here can be implemented **_either_** on your PC **_or_** on a HPC.
+
+]
+
+.pull-left[  
+
+&lt;img src="./static/img/af2001.gif" width="90%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Defining parallelism
+
+.pull-left[  
+
+In serial code:
+
+- chunk 1 runs. chunk 2 starts only once chunk 1 is complete
+
+&lt;img src="./static/img/track1.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+.pull-right[ 
+
+In parallel code:
+
+- chunk 1 and chunk 2 run simultaneously 
+
+&lt;img src="./static/img/track3.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Defining parallelism
+
+* [*Implicit* parallelism](https://en.wikipedia.org/wiki/Implicit_parallelism): when the system (libraries, compiler, etc) is doing the parallelising for you. E.g. a compiler or interpreter automatically exploits the parallelism. 
+
+--
+
+* [*Explicit* parallelism](https://en.wikipedia.org/wiki/Explicit_parallelism): when you are the one explicitly decomposing your work into tasks. This talk focuses on explicit parallelism (e.g. packages snow, foreach, doFuture), which is more commonly used.
+
+--
+
+Code can be described as ["embarrassingly parallel"](https://en.wikipedia.org/wiki/Embarrassingly_parallel) when there is clear iteration independence, i.e. it is easy to separate the problem into parallel tasks, and there is little to no dependency between those tasks. 
+
+--
+
+Embarrassingly parallel code is quite frequent in large-sample hydrology. Example: computing catchment-averaged precipitation for 100 river basins.
+&lt;img src="./static/img/catchprecip.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse
+
+# Outline:
+
+### Key concepts 
+1. Terminology
+2. Why use parallel computing? (and when?)
+3. Defining parallelism
+
+### **Key approaches**
+1. **For loops**
+2. **From for loops to lapply**
+3. **Parallelising the code (parallel / future.apply / foreach)**
+
+### References and resources
+1. The CRAN Task View
+2. Cloud computing
+3. References 
+
+---
+
+# 1. For loops
+
+The for-loop is our basic example of **serial code**. 
+
+Let's say we start with a list of three catchments.
+
+--
+
+Install the **rnrfa** library (Vitolo et al., 2018)
+
+```r
+if (!require('rnrfa')) install.packages('rnrfa')
+library('rnrfa')
+```
+
+--
+
+Import the catchment catalogue and select **three gauging stations**
+
+```r
+Stations_catalogue &lt;- catalogue() 
+list_of_catchments &lt;- c("21003","22006","27028")
+```
+
+---
+
+# 1. For loops
+
+In each loop we are going to download gauged daily flow for one catchment. 
+
+First, download and plot gauged daily flow for one catchment, just to check everything is working:
+
+```r
+flow &lt;- gdf(id = "27028")
+plot(flow)
+```
+
+&lt;img src="./static/img/flow.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# 1. For loops
+
+The for-loop is our basic example of serial (sequential) code. 
+
+Here is a simple example of a for loop where we download the *gauged daily flow* (gdf function) and compute the mean value for each catchment. 
+
+
+```r
+my_list &lt;- list()
+for (i in list_of_catchments) { 
+  flow &lt;- gdf(id = i)
+  mean_flow &lt;- mean(flow)
+  my_list[[i]] &lt;- mean_flow
+}
+```
+
+--
+
+The result of each iteration is a single value (variable mean_flow):
+
+```r
+str(my_list) 
+```
+
+```
+## List of 3
+##  $ 21003: num 16.1
+##  $ 22006: num 2.13
+##  $ 27028: num 15.3
+```
+
+---
+
+# 1. For loops
+
+We can wrap the “iteration” code inside **local()** to make sure it is evaluated in a local environment. 
+
+This simple adjustment prevents the loop from assigning values to the global environment and can prevent errors. 
+
+
+```r
+my_list &lt;- list()
+for (i in list_of_catchments) { 
+  my_list[[i]] &lt;- local({
+    flow &lt;- gdf(id = i)
+    mean_flow &lt;- mean(flow)
+    mean_flow 
+  })
+}
+```
+
+The output remains the same.
+
+---
+
+# 2. From for loops to Lapply
+
+Instead of executing each task in a sequence (where just one of the processors is used), we can use multiple processors on our computer to speed things up. 
+
+But first, we need to write our code as a function. We do this by turning our for loop into a lapply call. The **lapply** function in base-R is a substitute to the loop, and is often faster; it works by applying a **function** over a **list** or vector (list-apply). 
+
+--
+
+
+```r
+my_function &lt;- function(x) {
+  flow &lt;- gdf(id = x)
+  mean_flow &lt;- mean(flow)
+  mean_flow
+}
+my_list &lt;- lapply(list_of_catchments, my_function)
+```
+
+--
+
+Typically we would combine the two, like this:
+
+```r
+my_list &lt;- lapply(list_of_catchments, function(x) {
+    flow &lt;- gdf(id = x)
+    mean_flow &lt;- mean(flow)
+    mean_flow
+  })
+```
+
+---
+
+# 3. Parallelising the code 
+    
+There are many different methods to do this.
+
+Three of the most common are:
+1. The [parallel](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf) package (in base-R), which uses lapply functions and builds on the work done for CRAN packages **multicore** (Urbanek, 2009–2014) and **snow** (Tierney et al., 2003–present)
+
+--
+
+2. The [future.apply](https://cran.r-project.org/web/packages/future.apply/future.apply.pdf) package (Bengtsson, 2019), which makes things easier via the **future_lapply** function
+
+--
+
+3. The [doParallel](https://cran.r-project.org/web/packages/doParallel/doParallel.pdf) package, which uses [foreach](https://cran.r-project.org/web/packages/foreach/foreach.pdf) (Calaway et al., 2018) and the [doFuture](https://cran.r-project.org/web/packages/doFuture/doFuture.pdf) package (Bengtsson, 2019)
+
+
+---
+
+# 3.1. The parallel package
+
+The parallel package is part of base R. It builds on earlier CRAN parallel computation packages:
+* **multicore** (shared memory platforms - unix; now retired from CRAN)
+* [snow](https://cran.r-project.org/web/packages/snow/index.html) (distributed memory platforms)
+
+and allows us to run large chunks of computations in parallel.
+
+It works with both **_shared memory_** (when multiple processing elements share the same location in memory) and **_distributed memory_** (which requires explicit commands to transfer data from one processing element to another)
+
+Check the online [vignette](https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf) for the parallel package, by simply typing in the R console:
+
+```r
+vignette("parallel")
+```
+
+---
+
+# 3.1. The parallel package 
+
+Load the library
+
+```r
+library(parallel)
+```
+
+--
+
+Check the number of CPU cores on your computer
+
+```r
+ncores &lt;- detectCores()
+ncores
+```
+
+--
+ 
+Start the cluster 
+
+```r
+my_cluster &lt;- makeCluster(ncores)
+```
+
+---
+
+# 3.1. The parallel package 
+
+When parallelising you have to explicitly export/declare everything you need to perform the parallel operation to each thread
+
+--
+
+**clusterEvalQ** loads an expression on each cluster node:
+
+```r
+clusterEvalQ(my_cluster, {library(rnrfa)}) 
+```
+
+--
+
+**ClusterExport** exports objects from the base workspace to the global environments of each node (in this case we don't really need it because we won't be using the Station catalogue, so this is just an example)
+
+```r
+clusterExport(my_cluster, list( 'Stations_catalogue'))
+```
+
+--
+
+Now we can run the **parallel version of lapply** from the **snow** package:
+
+```r
+parLapply(my_cluster, list_of_catchments,
+          function(x) {
+            flow &lt;- gdf(id = x)
+            mean_flow &lt;- mean(flow)
+            mean_flow
+          })
+```
+
+---
+
+# 3.1. The parallel package 
+
+## Close the cluster
+
+After running your parallel code it is useful to stop the cluster.
+
+For a manually created cluster, it is best to stop it as follows:
+
+
+```r
+stopCluster(my_cluster)
+```
+
+---
+
+# 3.2. Using the future.apply package
+
+The **future.apply** package allows us to easily parallelise lapply.
+
+```r
+if (!require('future.apply')) install.packages('future.apply')
+library('future.apply')
+```
+
+The function **plan(multiprocess)** parallelises the code on your local computer for you. 
+
+It queries the machine (using availableCores()) to infer how many cores can be used simultaneously, so there is no need to explicitly specify how many cores are available:
+
+```r
+plan(multiprocess) 
+#plan(sequential) # returns to sequential processing
+```
+
+---
+
+# 3.2. Using the future.apply package
+
+Now all we have to do is to replace lapply() with **future_lapply()**:
+
+```r
+my_list &lt;- future_lapply(list_of_catchments, function(x) {
+  flow &lt;- gdf(id = x)
+  mean_flow &lt;- mean(flow)
+  mean_flow
+})
+```
+
+---
+
+# 3.3. With the foreach framework
+
+The [doParallel foreach](https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf) framework is another way of parallelising code. It is somewhat similar to the lapply approach. You have to explicitly create the cluster:
+
+```r
+library(doParallel)
+detectCores() # As before, check cores
+my_cluster &lt;- makeCluster(ncores) # Create cluster
+registerDoParallel(my_cluster) # Register cluster
+getDoParWorkers() # Check how many cores are being used
+```
+
+--
+
+Implement foreach as: 
+
+```r
+result &lt;- foreach(x=list_of_catchments) %dopar% {
+  library(rnrfa)
+  flow &lt;- gdf(id = x)
+  mean_flow &lt;- mean(flow)
+  mean_flow
+}
+stopCluster(my_cluster)
+```
+
+---
+
+# 3.3. With the foreach framework
+
+The **_simplified_** version of foreach can be implemented with the **doFuture** package: 
+
+```r
+if (!require('doFuture')) install.packages('doFuture')
+library('doFuture')
+```
+
+--
+
+doFuture provides access to the **future framework** and the full range of parallel backends that comes with it
+
+```r
+registerDoFuture()
+plan(multiprocess)
+
+my_list &lt;- foreach(x = list_of_catchments) %dopar% {
+  flow &lt;- gdf(id = x)
+  mean_flow &lt;- mean(flow)
+  mean_flow
+}
+```
+
+---
+
+# Summary of these approaches
+
+According to the author of the future package (see [here](https://www.jottr.org/2019/01/11/parallelize-a-for-loop-by-rewriting-it-as-an-lapply-call/)), one of the simplest approaches to parallel computing is to parallelize your for-loop with the future package:
+
+1.	Rewrite your for-loop such that each iteration is done *inside a local() call*
+
+2.	Rewrite this new for-loop as a *lapply call* (straightforward)
+
+3.	Replace the lapply call with a *parallel implementation* of your choice 
+
+
+---
+class: inverse
+
+# Outline:
+
+### Key concepts 
+1. Terminology
+2. Why use parallel computing? (and when?)
+3. Defining parallelism
+
+### Key approaches
+1. For loops
+2. From for loops to lapply
+3. Parallelising the code (parallel / future.apply / foreach)
+
+### **References and resources**
+1. **The CRAN Task View**
+2. **Cloud computing**
+3. **References** 
+
+---
+
+# The CRAN Task View for HPC
+
+The Task View can be accessed online at  [https://cran.r-project.org/web/views/HighPerformanceComputing.html](https://cran.r-project.org/web/views/HighPerformanceComputing.html):
+
+&lt;img src="./static/img/TaskView.PNG" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# The CRAN Task View for HPC
+
+- Explicit parallel computing 
+
+- Implicit parallel computing 
+
+- Grid computing
+
+- Hadoop, Random numbers, Resource managers and batch schedulers
+
+- Applications, GPUs
+
+- Large memory and out-of-memory data
+
+- Easier interfaces for Compiled code
+
+- Profiling tools
+
+
+---
+
+# Cloud computing
+
+&lt;img src="./static/img/RStudiocloud.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+It's worth mentioning that cloud computing is another way to increase code efficiency **for those who do not have access** to a powerful computer to run parallel code.
+
+--
+
+There is no software to install or configure. You can run R directly in the browser, and you can execute your parallel code in the cloud.
+
+---
+
+# Come to see our PICO: 'Using R in hydrology'
+
+.pull-left[  
+Friday 12th, PICO spot 5b (8:30-10:15) 
+
+In this fantastic session [HS1.2.7](https://meetingorganizer.copernicus.org/EGU2019/picos/31717): 
+## Innovative methods to facilitate open science and data analysis in hydrology.
+
+
+]
+
+.pull-right[  
+&lt;img src="./static/img/RHydro.PNG" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# References
+
+Helpful tutorials and references to go further:
+
+- M.Jones (2017), [Quick Intro to Parallel Computing in R](https://nceas.github.io/oss-lessons/parallel-computing-in-r/parallel-computing-in-r.html) 
+
+- H.Bengtsson (2019), author of the future package, [Parallelize a For-Loop by Rewriting it as an Lapply Call](https://www.jottr.org/2019/01/11/parallelize-a-for-loop-by-rewriting-it-as-an-lapply-call/)
+
+- F.Schwendinger et al. (2017), [High Performance Computing with Applications in R](http://statmath.wu.ac.at/~schwendinger/HPC/HPC.pdf)
+
+- G.Lockwood (2015), [Using R on HPC Clusters](http://www.glennklockwood.com/data-intensive/r/on-hpc.html) or [Parallel Options for R](http://www.glennklockwood.com/data-intensive/r/parallel-options.html)
+
+- A.Mirshani (2019), [Parallel computing cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/parallel_computation.pdf) (note: the link downloads the PDF)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

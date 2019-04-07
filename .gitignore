@@ -34,3 +34,5 @@ vignettes/*.pdf
 
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
+
+/presentations/03_get_clean_viz/03_get-clean-viz_cache

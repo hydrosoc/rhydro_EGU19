@@ -1,0 +1,79 @@
+---
+title: "rHydro 2019: Questions"
+subtitle: ""
+author: "rHydro Group"
+date: "2019/03/03 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    css: ["static/css/rhydro.css", "static/css/head-foot.css" ]
+
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+# color used in xaringanthemer
+egu_blue <- rgb(red = 0, green = 112, blue = 192,maxColorValue = 255)
+egu_yellow <- rgb(red = 255, green = 221, blue = 0,maxColorValue = 255)
+
+# color used for font awesome icons
+fa_color <- "lightgrey"
+
+# SET XARINGTHEMER CHUNK TO EVAL = TRUE TO CHANGE THEME!
+# xaringanthemer saves the resulting css theme in the main document directory.
+# drop the 'statics/css/'  from the file path to use the new css file
+
+
+# intsall missing packages
+list.of.packages <- c("xaringan", "xaringanthemer", "emo", "fontawesome")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
+```
+
+
+class: title-slide, center
+
+
+.pull-left[
+<br>
+# Ask us a Question
+<br><br><br><br><br><br>
+
+### or leave it at
+## [www.sli.do](https://sli.do) using
+# #rhydro2019
+
+
+
+]
+
+.pull-right[
+
+
+ .right[
+ <br>
+`r fontawesome::fa("github", fill = fa_color)` [rHydro2019](https://github.com/hydrosoc/rhydro_EGU19)  
+`r fontawesome::fa("facebook", fill = fa_color)` [Hydrology in R](https://www.facebook.com/groups/1130214777123909/)
+]
+]
+
+
+.title-logo-box[![](./static/img/rhydro_logo_alt.png)]
+
+
+
+---
+
+background-position: 50% 50%
+class: center
+
+
+<iframe src="https://wall2.sli.do/event/vzmnjahc" width="850" height="650" scrolling="no"></iframe> 
+

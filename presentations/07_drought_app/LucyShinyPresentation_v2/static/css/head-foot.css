@@ -1,0 +1,23 @@
+div.my-header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 30px;
+    width: 100%;
+    text-align: left;
+}
+
+div.my-footer {
+   position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 30px;
+    width: 100%;
+}
+div.my-footer span {
+    font-size: 10pt;
+    color: #000000;
+        position: absolute;
+    left: 15px;
+    bottom: 10px;
+}

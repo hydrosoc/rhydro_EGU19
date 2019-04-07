@@ -1,0 +1,1 @@
+ornldaac/1328/daymet_v3_tmin_annavg_2011_na.nc4
