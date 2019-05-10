@@ -22,7 +22,21 @@ Conveners: Alexander Hurley, Louise Slater, Lucy Barker, Guillaume Thirel, Claud
 The detailed and time-tabled list of contributions, tutorials and discussion points will be here as soon it's ready.
 
 ## Slides
-All materials will be uploaded to this repository before the course begins. To get everything (slides, data, code, etc.) onto your local machine, we recommend to [download the whole github course repository](https://codeload.github.com/hydrosoc/rhydro_EGU19/zip/master). Individual presentations (*.html* or PDF files) can be downloaded from the [presentations folder](./presentations) and viewed in a regular web browser (once they have been made available).
+All materials to reproduce the slides and analyses are available on this repository.
+To get everything (slides, data, code, etc.) onto your local machine, we recommend to [download the whole github course repository](https://codeload.github.com/hydrosoc/rhydro_EGU19/zip/master). Individual presentations (*.html* or PDF files) can be downloaded from the [presentations folder](./presentations) and viewed in a regular web browser.
+
+Links to individual presentations (for direct view in browser) are below:
+
+
+- [Course intro and getting to grips with R in Hydrology](https://hydrosoc.github.io/rhydro_EGU19/presentations/01_02_intro_getting_to_grips/IPgetGrips.html) // A. Hurley, I. Prosdocimi
+- [Obtaining, cleaning and visualizing 
+hydrological data with R](https://hydrosoc.github.io/rhydro_EGU19/presentations/03_get_clean_viz/03_get-clean-viz.html#1) // A. Hurley 
+- [Introduction to parallel and high performance computing for hydrologists](https://hydrosoc.github.io/rhydro_EGU19/presentations/04_hpc_computing/L.SlaterParallelPres.html) // L. Slater
+- [Staying up-to date:
+automating tasks from downloading data to reporting](https://hydrosoc.github.io/rhydro_EGU19/presentations/06_task_automation/06_task_automation.html) // A. Hurley
+- [Using R Shiny to visualise and share your data: A UK drought story](https://hydrosoc.github.io/rhydro_EGU19/presentations/07_drought_app/LucyShinyPresentation_v2/lucy_shiny_v2.html) // L. Baker
+- [Modelling the hydrological cycle in snow-dominated catchments](https://hydrosoc.github.io/rhydro_EGU19/presentations/08_snow_hydrology/snow_Thirel.html) // G. Thirel
+- [Community-led initiatives: get involved!](https://hydrosoc.github.io/rhydro_EGU19/presentations/09_10_community_farewell/CV.html) // C. Vitolo, A. Hurley
 
 ## Checks
 We will provide any relevant information you require to follow along during the course in due time. This includes software (versions) and any other materials. Stay tuned!  
