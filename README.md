@@ -34,7 +34,7 @@ hydrological data with R](https://hydrosoc.github.io/rhydro_EGU19/presentations/
 - [Introduction to parallel and high performance computing for hydrologists](https://hydrosoc.github.io/rhydro_EGU19/presentations/04_hpc_computing/L.SlaterParallelPres.html) // L. Slater
 - [Staying up-to date:
 automating tasks from downloading data to reporting](https://hydrosoc.github.io/rhydro_EGU19/presentations/06_task_automation/06_task_automation.html) // A. Hurley
-- [Using R Shiny to visualise and share your data: A UK drought story](https://hydrosoc.github.io/rhydro_EGU19/presentations/07_drought_app/LucyShinyPresentation_v2/lucy_shiny_v2.html) // L. Baker
+- [Using R Shiny to visualise and share your data: A UK drought story](https://hydrosoc.github.io/rhydro_EGU19/presentations/07_drought_app/LucyShinyPresentation_v2/lucy_shiny_v2.html) // L. Barker
 - [Modelling the hydrological cycle in snow-dominated catchments](https://hydrosoc.github.io/rhydro_EGU19/presentations/08_snow_hydrology/snow_Thirel.html) // G. Thirel
 - [Community-led initiatives: get involved!](https://hydrosoc.github.io/rhydro_EGU19/presentations/09_10_community_farewell/CV.html) // C. Vitolo, A. Hurley
 
