@@ -8,7 +8,7 @@
 
 # Using R in Hydrology - EGU2019 Short Course
 
-Conveners: Alexander Hurley, Louise Slater, Lucy Barker, Guillaume Thirel, Claudia Vitolo
+Conveners: Alexander Hurley, Louise Slater, Lucy Barker, Guillaume Thirel, Claudia Vitolo, Ilaria Prosdocimi
 
 
 ## Details 
