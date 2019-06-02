@@ -71,7 +71,7 @@ There are a number of other short courses using R that may be of interest to you
 
  ## Citation
 Please refer to this course as:
-* Alexander Hurley, Louise Slater, Guillaume Thirel, Lucy Barker, Claudia Vitolo, Ilaria Prosdocimi, & Shaun Harrigan. (2019, June). Using R in Hydrology at EGU2019 (Version v1.0.0). Zenodo. http://doi.org/10.5281/zenodo.3236979
+* Alexander Hurley, Louise Slater, Guillaume Thirel, Lucy Barker, Claudia Vitolo, Ilaria Prosdocimi, & Shaun Harrigan. (2019, April). Using R in Hydrology at EGU2019 (Version v1.0.0). Zenodo. http://doi.org/10.5281/zenodo.3236979
 
 **BibTeX**
 ```
@@ -84,7 +84,7 @@ Please refer to this course as:
                   Ilaria Prosdocimi and
                   Shaun Harrigan},
   title        = {Using R in Hydrology at EGU2019},
-  month        = jun,
+  month        = apr,
   year         = 2019,
   doi          = {10.5281/zenodo.3236979},
   url          = {https://doi.org/10.5281/zenodo.3236979}
