@@ -4,7 +4,7 @@
 / [Check](#Checks) 
 / [Resources](#Resources) 
 / [R at EGU2019](#r-at-egu2019)
-<!--- / [Citation](#Citation)  --->
+/ [Citation](#Citation)
 
 # Using R in Hydrology - EGU2019 Short Course
 
@@ -67,11 +67,24 @@ There are a number of other short courses using R that may be of interest to you
 
 
 
-<!--- ## Citation
+ ## Citation
 Please refer to this course as:
-* Louise Slater, Claudia Vitolo, Shaun Harrigan, Tobias Gauster, Guillaume Thirel, & Alexander Hurley. (2018, April). Using R in Hydrology at EGU2018 (Version 1.0.1). Zenodo. http://doi.org/10.5281/zenodo.2554009
+* Alexander Hurley, Louise Slater, Guillaume Thirel, Lucy Barker, Claudia Vitolo, Ilaria Prosdocimi, & Shaun Harrigan. (2019, June). Using R in Hydrology at EGU2019 (Version v1.0.0). Zenodo. http://doi.org/10.5281/zenodo.3236979
+
 **BibTeX**
 ```
-@misc{rhydro_EGU2018, title={Using R in Hydrology at EGU2018}, DOI={10.5281/zenodo.2554009}, abstractNote={<p>This repository contains all contributions to the <a href="https://meetingorganizer.copernicus.org/EGU2018/session/28914">short course</a> delivered at EGU 2018. Materials to this and other short courses can be found on the <a href="https://github.com/hydrosoc">YHS GitHub repository.</a></p>}, publisher={Zenodo}, author={Louise Slater and Claudia Vitolo and Shaun Harrigan and Tobias Gauster and Guillaume Thirel and Alexander Hurley}, year={2018}, month={Apr}}
+@misc{alexander_hurley_2019_3236979,
+  author       = {Alexander Hurley and
+                  Louise Slater and
+                  Guillaume Thirel and
+                  Lucy Barker and
+                  Claudia Vitolo and
+                  Ilaria Prosdocimi and
+                  Shaun Harrigan},
+  title        = {Using R in Hydrology at EGU2019},
+  month        = jun,
+  year         = 2019,
+  doi          = {10.5281/zenodo.3236979},
+  url          = {https://doi.org/10.5281/zenodo.3236979}
+}
 ```
---->
