@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/169320856.svg)](https://zenodo.org/badge/latestdoi/169320856)
+
 [Details](#Details) 
 / [Topics](#Topics) 
 / [Slides](#Slides) 
